@@ -1,2 +1,2 @@
 # RayEngine
-A smal game engine made in pyray! (raylib for python)
+A small game engine made in pyray! (raylib for python)
