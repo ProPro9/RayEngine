@@ -13,8 +13,8 @@ def select_project():
 
 def setup_project(path):
     # Split into folders and files
-    folders = ["assets", "scripts", "sfx", "data"]
-    files = ["game.json", "runtime.py"]
+    folders = ["assets", "scripts", "sfx", "data", "json"]
+    files = ["game.json", "runtime.py", "json/player.json"]
 
     # Create the directories
     for folder in folders:
@@ -26,9 +26,12 @@ def setup_project(path):
         if not os.path.exists(file_path):
             with open(file_path, 'w') as f:
                 if filename == "game.json":
-                    f.write('{\n    "title": "New Game",\n    "version": "1.0.0"\n}')
+                    f.write('{\n    "title": "New Game",\n    "version": "1.0.0",\n    "target platforms": ""\n}')
                 elif filename == "runtime.py":
                     f.write('import pyray as rl\n\n# Your game logic goes here')
+
+                elif filename == "json/player.json":
+                    f.write('{\n    "tile_name": "player",\n    "spritesheetpath": "",\n    "moveset": "D = RIGHT, A = LEFT, SPACE = JUMP,"}')
 
 # select project
 project = select_project()
