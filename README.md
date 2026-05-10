@@ -12,6 +12,7 @@ Features (to come):
 
 
 Requirements:
+
 pip install pyray
 
 Ubuntu/Debian:
