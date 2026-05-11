@@ -48,10 +48,21 @@ while not rl.window_should_close():
         "Output"
     )
 
+
     # Viewport (main area)
     rl.gui_panel(
         rl.Rectangle(0, 0, 1280 - sidebar_width, 720 - bottombar_height),
         "Viewport"
+    )
+
+    mouse = rl.get_mouse_position()
+
+    rl.draw_text(
+        f"Mouse: {int(mouse.x)}, {int(mouse.y)}",
+        10,
+        30,
+        20,
+        rl.WHITE
     )
 
     rl.end_drawing()
