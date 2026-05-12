@@ -23,7 +23,19 @@ rl.gui_set_style(rl.DEFAULT, rl.TEXT_COLOR_FOCUSED, rl.color_to_int(rl.Color(255
 rl.gui_set_style(rl.DEFAULT, rl.BORDER_COLOR_NORMAL, rl.color_to_int(rl.Color(70, 70, 70, 255)))
 
 # Variables
-tile_dropdown_active = 0
+
+# DropDown Variables
+tile_dropdown_active = rl.ffi.new("int *", 0)
+tile_dropdown_edit = False
+
+# Loaded Assets
+asset_1 = "NotLoaded"
+asset_2 = "NotLoaded"
+asset_3 = "NotLoaded"
+asset_4 = "NotLoaded"
+asset_5 = "NotLoaded"
+
+assets = f"{asset_1};{asset_2};{asset_3};{asset_4};{asset_5}"
 
 # Rendering Loop
 while not rl.window_should_close():
@@ -55,6 +67,8 @@ while not rl.window_should_close():
         "Viewport"
     )
 
+    # Buttons
+
     if rl.gui_button(rl.Rectangle(1100, 50, 100, 30), "#22#Pencil"):
         print("Pencil")
     if rl.gui_button(rl.Rectangle(1100, 90, 100, 30), "#23#BigPencil"):
@@ -63,6 +77,16 @@ while not rl.window_should_close():
         print("Erase")
     if rl.gui_button(rl.Rectangle(1100, 675, 150, 30), "#2#Save"):
         print("Save")
+
+        # Dropdowns
+
+    if rl.gui_dropdown_box(
+        rl.Rectangle(1100, 170, 150, 30),
+        assets,
+        tile_dropdown_active,
+        tile_dropdown_edit
+    ):
+        tile_dropdown_edit = not tile_dropdown_edit
 
     mouse = rl.get_mouse_position()
 
