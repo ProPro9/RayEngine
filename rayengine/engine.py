@@ -36,24 +36,33 @@ while not rl.window_should_close():
     sidebar_width = 200
     bottombar_height = 150
 
-    # Tools panel (full height on right)
+    # Tools panel
     rl.gui_panel(
         rl.Rectangle(1280 - sidebar_width - 2, 0, sidebar_width, 720),
         "Tools"
     )
 
-    # Bottom panel (Output)
+    # Output Panel
     rl.gui_panel(
         rl.Rectangle(0, 720 - bottombar_height, 1280 - sidebar_width, bottombar_height),
         "Output"
     )
 
 
-    # Viewport (main area)
+    # Viewport
     rl.gui_panel(
         rl.Rectangle(0, 0, 1280 - sidebar_width, 720 - bottombar_height),
         "Viewport"
     )
+
+    if rl.gui_button(rl.Rectangle(1100, 50, 100, 30), "#22#Pencil"):
+        print("Pencil")
+    if rl.gui_button(rl.Rectangle(1100, 90, 100, 30), "#23#BigPencil"):
+        print("BigPencil")
+    if rl.gui_button(rl.Rectangle(1100, 130, 100, 30), "#28#Erase"):
+        print("Erase")
+    if rl.gui_button(rl.Rectangle(1100, 675, 150, 30), "#2#Save"):
+        print("Save")
 
     mouse = rl.get_mouse_position()
 
