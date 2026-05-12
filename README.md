@@ -20,6 +20,5 @@ sudo apt install python3-tk
 Fedora/Bazzite:
 sudo dnf install python3-tkinter
 
-If people decide to help with development, help if you want to bc i dont have money
-
+Ill probably make a itch.io soon or patreon
 DM me on discord! propro_9
