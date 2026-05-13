@@ -1,15 +1,14 @@
 import pyray as rl
 import sys
 import os
+import json
 
 # Init
 rl.init_window(1280, 720, "RayEngine")
 rl.set_target_fps(60)
 
-# ----------------------
-# Dark Mode Theme
-# ----------------------
 
+# Dark Mode Theme
 rl.gui_set_style(rl.DEFAULT, rl.TEXT_SIZE, 18)
 
 rl.gui_set_style(rl.DEFAULT, rl.BACKGROUND_COLOR, rl.color_to_int(rl.Color(30, 30, 30, 255)))
@@ -68,7 +67,6 @@ while not rl.window_should_close():
     )
 
     # Buttons
-
     if rl.gui_button(rl.Rectangle(1100, 50, 100, 30), "#22#Pencil"):
         print("Pencil")
     if rl.gui_button(rl.Rectangle(1100, 90, 100, 30), "#23#BigPencil"):
@@ -78,8 +76,7 @@ while not rl.window_should_close():
     if rl.gui_button(rl.Rectangle(1100, 675, 150, 30), "#2#Save"):
         print("Save")
 
-        # Dropdowns
-
+    # Dropdowns
     if rl.gui_dropdown_box(
         rl.Rectangle(1100, 170, 150, 30),
         assets,

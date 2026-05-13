@@ -2,6 +2,7 @@ import pyray as rl
 import os
 import subprocess
 import sys
+import json
 from tkinter import Tk, filedialog
 
 def select_project():
@@ -13,8 +14,8 @@ def select_project():
 
 def setup_project(path):
     # Split into folders and files
-    folders = ["assets", "scripts", "sfx", "data", "json"]
-    files = ["game.json", "runtime.py", "json/player.json"]
+    folders = ["assets", "scripts", "sfx", "data", "json", "data/dialogue"]
+    files = ["game.json", "runtime.py", "json/player.json", "data/dialogue/test_dialogue.json"]
 
     # Create the directories
     for folder in folders:
@@ -31,7 +32,10 @@ def setup_project(path):
                     f.write('import pyray as rl\n\n# Your game logic goes here')
 
                 elif filename == "json/player.json":
-                    f.write('{\n    "tile_name": "player",\n    "spritesheetpath": "",\n    "moveset": "D = RIGHT, A = LEFT, SPACE = JUMP,"}')
+                    f.write('{\n    "tile_name": "player",\n    "spritesheetpath": "TheEngineWillSplitFrames",\n    "moveset": "D = RIGHT, A = LEFT, SPACE = JUMP,"}')
+
+                elif filename == "data/dialogue/test_dialogue.json":
+                    f.write('{\n    "Player.Dial1": Hi! The creator of this is Propro9!,\n    "ThisisHowItsMade": Hi again :],\n}')
 
 # select project
 project = select_project()
