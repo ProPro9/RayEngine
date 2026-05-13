@@ -27,7 +27,7 @@ rl.gui_set_style(rl.DEFAULT, rl.BORDER_COLOR_NORMAL, rl.color_to_int(rl.Color(70
 tile_dropdown_active = rl.ffi.new("int *", 0)
 tile_dropdown_edit = False
 
-# Loaded Assets
+# # Loaded Assets
 asset_1 = "NotLoaded"
 asset_2 = "NotLoaded"
 asset_3 = "NotLoaded"
